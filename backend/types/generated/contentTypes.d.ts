@@ -542,15 +542,15 @@ export interface ApiRecipeRecipe extends Struct.CollectionTypeSchema {
         'moroccan',
         'brazilian',
         'caribbean',
-        'middle - eastern',
+        'middle-eastern',
         'british',
         'german',
         'portuguese',
         'other',
       ]
     >;
-    description: Schema.Attribute.Blocks;
-    imageUrl: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    imageUrl: Schema.Attribute.Text;
     ingredients: Schema.Attribute.JSON & Schema.Attribute.Required;
     instructions: Schema.Attribute.JSON & Schema.Attribute.Required;
     isPublic: Schema.Attribute.Boolean &

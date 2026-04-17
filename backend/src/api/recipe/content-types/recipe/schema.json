@@ -16,7 +16,7 @@
       "required": true
     },
     "description": {
-      "type": "blocks"
+      "type": "text"
     },
     "cuisine": {
       "type": "enumeration",
@@ -64,7 +64,7 @@
       "required": true
     },
     "imageUrl": {
-      "type": "string"
+      "type": "text"
     },
     "isPublic": {
       "type": "boolean",
