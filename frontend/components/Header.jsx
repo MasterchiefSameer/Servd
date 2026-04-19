@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Header Component
+ * What there's work: Main top navigation bar.
+ * Features in browser: Logo placeholder, user profile dropdown via Clerk, and main navigation links (Dashboard, My Pantry).
+ * In which button they are working: Present on all pages. Logo clicks navigate to Dashboard/Home.
+ * ==========================================
+ */
 import { SignInButton, SignUpButton, UserButton, Show } from '@clerk/nextjs'
 import React from 'react'
 import { Button } from "./ui/button";
@@ -18,11 +26,11 @@ const Header = async () => {
      supports-backdrop-filter:bg-stone-50/60">
             <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link href={user ? "/dashboard" : "/"}> <Image src="/orange-logo.png"
-                    alt="Srved Logo"
+                    alt="Servd Logo"
                     width={60} height={60} className="w-16" /></Link>
                 <div className="hidden md:flex items-center space-x-8 text-sm font-medium text-stone-600">
                     <Link
-                        href="/pantry/recipes"
+                        href="/recipes"
                         className="hover:text-orange-600 transition-colors flex gap-1.5 items-center"
                     >
                         <Cookie className="w-4 h-4" />
@@ -42,7 +50,7 @@ const Header = async () => {
                         <UserDropdown />
                     </Show>
 
-                    <HowToCookModal/>
+                    <HowToCookModal />
 
 
                     {user && (<PricingModal
@@ -50,8 +58,8 @@ const Header = async () => {
                         <Badge
                             variant="outline"
                             className={`flex h-8 px-3 gap-1.5 rounded-full text-xs font-semibold transition-all ${user.subscriptionTier === "pro"
-                                    ? "bg-linear-to-r from-orange-600 to-amber-500 text-white border-none shadow-sm"
-                                    : "bg-stone-200/50 text-stone-600 border-stone-200 cursor-pointer hover:bg-stone-300/50 hover:border-stone-300"
+                                ? "bg-linear-to-r from-orange-600 to-amber-500 text-white border-none shadow-sm"
+                                : "bg-stone-200/50 text-stone-600 border-stone-200 cursor-pointer hover:bg-stone-300/50 hover:border-stone-300"
                                 }`}
                         >
                             <span>

@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Image Uploader Component
+ * What there's work: Component that provides drag/drop or file selection for analyzing pantry images.
+ * Features in browser: Hidden file input, drag-and-drop hot zone, loading animations for AI scan step.
+ * In which button they are working: Used inside the "My Pantry" page when the user clicks the upload area or drops an image.
+ * ==========================================
+ */
 "use client";
 
 import { useState, useCallback, useRef } from "react";

@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Pantry AI Recipe Results Page/ My Recipe Page
+ * What there's work: Displays AI-generated recipe suggestions based on current pantry ingredients.
+ * Features in browser: List of customized AI recipes, match percentage, missing ingredients, and generation UI.
+ * In which button they are working: Accessed after clicking "Find Recipes" or "What can I cook?" from the My Pantry page.
+ * ==========================================
+ */
 "use client";
 // MY RECIPE PAGE
 import { useEffect } from "react";
@@ -79,7 +87,7 @@ export default function PantryRecipesPage() {
           )}
 
           {/* Usage Stats */}  {/* Below line is this, AI changed this {recipesData !== undefined && (*/}
-           {recipesData?.success && (
+          {recipesData?.success && (
             <div className="bg-orange-50 p-4 border-2 border-orange-200 inline-flex items-center gap-3">
               <Sparkles className="w-5 h-5 text-orange-600" />
               <div className="text-sm">
@@ -196,8 +204,8 @@ export default function PantryRecipesPage() {
 
 
         {/* Rate Limit Reached */} {/* Below line is this, original line{!loading && recipesData === undefined && ( */}
-           {/* AI changed this {recipesData?.success && ( */}
-        {!loading && recipesData === undefined &&  (
+        {/* AI changed this {recipesData?.success && ( */}
+        {!loading && recipesData === undefined && (
           <div className="bg-linear-to-br from-orange-50 to-amber-50 p-12 text-center border-2 border-orange-200">
             <div className="bg-orange-100 w-20 h-20 border-2 border-orange-200 flex items-center justify-center mx-auto mb-6">
               <Sparkles className="w-10 h-10 text-orange-600" />

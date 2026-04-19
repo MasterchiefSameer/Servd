@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Pro Locked Section Component
+ * What there's work: Wraps premium content to conditionally hide it from Free tier users.
+ * Features in browser: Shows a blurry overlay or "Upgrade" prompt layered over premium content (like Nutrition specs or Chef Tips).
+ * In which button they are working: Shows an Upgrade CTA button that triggers the Pricing Modal or Checkout flow.
+ * ==========================================
+ */
 "use client";
 
 import PricingModal from "@/components/PricingModal";

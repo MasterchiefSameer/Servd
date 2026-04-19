@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: User Dropdown Component
+ * What there's work: Wraps Clerk's user button or renders a custom dropdown for account/billing management.
+ * Features in browser: Dropdown overlay showing profile info, settings, billing management, and logout.
+ * In which button they are working: Triggered by clicking the user's avatar image in the top right Header.
+ * ==========================================
+ */
 "use client";
 
 import { UserButton } from "@clerk/nextjs";

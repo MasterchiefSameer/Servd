@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Dashboard Page
+ * What there's work: Acts as the main landing dashboard for authenticated users. Displays categories, recent/saved recipes, and quick actions.
+ * Features in browser: Shows personalized greeting, recipe categories carousel, and recent recipe grids.
+ * In which button they are working: Accessed via the "Dashboard" nav link or immediately after successful Sign In.
+ * ==========================================
+ */
 
 // DASHBOARD PAGE
 import React from "react";

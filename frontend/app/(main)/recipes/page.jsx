@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: All Recipes / Saved Recipes Page
+ * What there's work: Displays a collection of the user's saved recipes or general recipes.
+ * Features in browser: Recipe grid viewing, filtering, or pagination for browsing cookbooks.
+ * In which button they are working: Accessed via "My Recipes", "Saved Recipes", or "Cookbook" button.
+ * ==========================================
+ */
 "use client";
 
 import { useEffect } from "react";

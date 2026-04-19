@@ -297,12 +297,12 @@ Return ONLY a valid JSON object with this exact structure (no markdown, no expla
       "📤 Saving new recipe to database with title:",
       normalizedTitle
     );
-
+   // below code save the recipe into the db 
     const createRecipeResponse = await fetch(`${STRAPI_URL}/api/recipes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${STRAPI_API_TOKEN}`,
+        Authorization: `Bearer ${STRAPI_API_TOKEN}`, 
       },
       body: JSON.stringify(strapiRecipeData),
     });
@@ -318,7 +318,7 @@ Return ONLY a valid JSON object with this exact structure (no markdown, no expla
 
     // return DUMMY_RECIPE_RESPONSE;
     return {
-      success: true,  //it return the frontend
+      success: true,  //it return to the frontend
       recipe: {
         ...recipeData,
         title: normalizedTitle,

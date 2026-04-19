@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Pricing Section Component
+ * What there's work: Reusable UI section displaying available pricing plans and subscription benefits.
+ * Features in browser: Side-by-side pricing cards, feature bullet lists.
+ * In which button they are working: Typically rendered on the landing page or a dedicated /pricing page.
+ * ==========================================
+ */
 import React from 'react'
 import { PricingTable } from "@clerk/nextjs";
 

@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Single Recipe Detail Page
+ * What there's work: Shows detailed view for a specific recipe (ingredients, instructions, nutrition, tips, substitutions).
+ * Features in browser: Step-by-step instruction timeline, ingredient checklist, toggle to save/bookmark recipe, Pro-locked sections.
+ * In which button they are working: Accessed by clicking any specific "Recipe Card" or "View Recipe" button.
+ * ==========================================
+ */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 // WORKS WHEN YOU OPEN ANY RECIPE FROM MY RECIPE, CUSINE, CATEGORY

@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Home Page (Landing)
+ * What there's work: The public marketing landing page for unauthenticated visitors.
+ * Features in browser: Hero section, features overview, and call-to-action to sign up for ServedDiet.
+ * In which button they are working: Root URL "/" - typically accessed by visiting the base site URL or clicking the main Logo.
+ * ==========================================
+ */
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Flame, Clock, Users } from "lucide-react";
 // import { PricingTable } from "@clerk/nextjs";

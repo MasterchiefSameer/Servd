@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: My Pantry Page
+ * What there's work: Manages user's available ingredients and handles uploading food images to scan via AI.
+ * Features in browser: Image uploader drag/drop zone, list of current ingredients, delete/edit items, "Find Recipes" trigger.
+ * In which button they are working: Accessed via the "My Pantry" / "Pantry" navigation tab on the Header.
+ * ==========================================
+ */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 // My Pantry page

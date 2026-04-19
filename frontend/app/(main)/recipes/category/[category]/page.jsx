@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Category Recipes Page
+ * What there's work: Dynamically lists recipes by meal category (e.g., Breakfast, Lunch, Dinner).
+ * Features in browser: Shows a grid of recipes filtered by the selected meal category.
+ * In which button they are working: Accessed by clicking a Meal Category button or link in the Dashboard.
+ * ==========================================
+ */
 "use client"
 
 import { useParams } from "next/navigation";

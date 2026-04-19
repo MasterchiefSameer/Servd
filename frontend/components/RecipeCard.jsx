@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Recipe Card Component
+ * What there's work: Reusable UI component that displays a miniature visual summary of a recipe.
+ * Features in browser: Shows thumbnail recipe image, title, prep/cook time, and cuisine/category tags.
+ * In which button they are working: Clicking the card container navigates directly to that specific recipe's details page.
+ * ==========================================
+ */
 //This have multiple varient, pantry, explore pages, saved pages
 import Link from "next/link";
 import Image from "next/image";

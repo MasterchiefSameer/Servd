@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: How To Cook Modal Component
+ * What there's work: Displays a focused, step-by-step interactive view of recipe instructions.
+ * Features in browser: Modal overlay with cooking steps.
+ * In which button they are working: Triggered by clicking "Cook Now" or "How to Cook" button on a recipe details page.
+ * ==========================================
+ */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 

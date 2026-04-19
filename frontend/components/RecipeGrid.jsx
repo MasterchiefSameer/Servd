@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Recipe Grid Component
+ * What there's work: Layout wrapper to display a collection of RecipeCard components.
+ * Features in browser: Responsive multi-column grid layout for browsing recipes elegantly on mobile or desktop.
+ * In which button they are working: Automatically wraps children elements, no specific button interaction.
+ * ==========================================
+ */
 "use client";
 // first i am in dashboard page, when i click on catageries, cuisine then it move to that page. 
 // and it show the recipes of that catagery or cuisine.

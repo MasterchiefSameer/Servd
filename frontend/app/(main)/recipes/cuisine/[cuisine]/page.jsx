@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Cuisine Recipes Page
+ * What there's work: Dynamically lists recipes specific to a selected cuisine type.
+ * Features in browser: Browsing grid of recipes mapped to a specific URL parameter (e.g., Italian, Mexican).
+ * In which button they are working: Accessed by clicking a specific Cuisine category card or filter button.
+ * ==========================================
+ */
 "use client"
 
 import { useParams } from "next/navigation";

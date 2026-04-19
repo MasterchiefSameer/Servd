@@ -1,3 +1,11 @@
+/*
+ * ==========================================
+ * File: Add To Pantry Modal Component
+ * What there's work: Interative modal overlay to let users type and manually add an ingredient to their pantry.
+ * Features in browser: Form input fields for ingredient name and quantity.
+ * In which button they are working: Triggered by clicking "Add Item Manually" or "+" button in the My Pantry page.
+ * ==========================================
+ */
 /* eslint-disable react-hooks/set-state-in-effect */
 "use client";
 
