@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { neobrutalism } from '@clerk/ui/themes';
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
               </p>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
     </ClerkProvider>
