@@ -1,9 +1,5 @@
 # ServedDiet Project Architecture
 
-Based on a deep scan of the codebase (both `frontend` and `backend` directories), here is the comprehensive architectural overview of the application, detailing every library, language, route structure, and the exact flow of data.
-
----
-
 ## 1. Core Languages
 - **JavaScript (JS/JSX)**: Used throughout the entire project (both Next.js Frontend and Strapi Node.js Backend).
 - **CSS**: Tailwind post-processing injected into global stylesheets.
