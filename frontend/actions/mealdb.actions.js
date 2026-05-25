@@ -7,8 +7,8 @@ const MEALDB_BASE = "https://www.themealdb.com/api/json/v1/1"
 
 export async function getRecipeOfTheDay() {
   try {
-    const response = await fetch(`${MEALDB_BASE}/random.php`, {
-      next: { revalidate: 86400 }, // Cache for 24 hours
+    const response = await fetch(`${MEALDB_BASE}/filter.php?c=Vegetarian`, {
+      next: { revalidate: 60 }, // Cache for 1 minute (for deployment, in production use 43200, i.e 12 hours)
     });
 
     if (!response.ok) {
@@ -16,15 +16,78 @@ export async function getRecipeOfTheDay() {
     }
 
     const data = await response.json();
+
+    if (!data.meals || data.meals.length === 0) {
+      throw new Error("No vegetarian meals found");
+    }
+
+    // 2. Use the current date to pick a consistent "Recipe of the Day"
+    const daysSinceEpoch = Math.floor(Date.now() / 43200);
+    const mealIndex = daysSinceEpoch % data.meals.length;
+    const selectedMeal = data.meals[mealIndex];
+
+    const detailResponse = await fetch(`${MEALDB_BASE}/lookup.php?i=${selectedMeal.idMeal}`, {
+      next: { revalidate: 86400 }, // Cache for 24 hours
+    });
+
+    if (!detailResponse.ok) {
+      throw new Error("Failed to fetch recipe details");
+    }
+
+    const detailData = await detailResponse.json();
+
     return {
       success: true,
-      recipe: data.meals[0],
+      recipe: detailData.meals[0],
     };
   } catch (error) {
     console.error("Error fetching recipe of the day:", error);
     throw new Error(error.message || "Failed to load recipe");
   }
 }
+
+// export async function getRecipeOfTheDay() {
+//   try {
+//     // 1. Fetch all vegetarian meals
+//     const listResponse = await fetch(`${MEALDB_BASE}/filter.php?c=Vegetarian`, {
+//       next: { revalidate: 43200 }, // Cache for 12 hours
+//     });
+
+//     if (!listResponse.ok) {
+//       throw new Error("Failed to fetch vegetarian meals list");
+//     }
+
+//     const listData = await listResponse.json();
+    
+//     if (!listData.meals || listData.meals.length === 0) {
+//       throw new Error("No vegetarian meals found");
+//     }
+
+//     // 2. Use the current date to pick a consistent "Recipe of the Day"
+//     const daysSinceEpoch = Math.floor(Date.now() / 86400000);
+//     const mealIndex = daysSinceEpoch % listData.meals.length;
+//     const selectedMeal = listData.meals[mealIndex];
+
+//     // 3. Fetch the full details of the selected meal to get descriptions, instructions, etc.
+//     const detailResponse = await fetch(`${MEALDB_BASE}/lookup.php?i=${selectedMeal.idMeal}`, {
+//       next: { revalidate: 86400 }, // Cache for 24 hours
+//     });
+
+//     if (!detailResponse.ok) {
+//       throw new Error("Failed to fetch recipe details");
+//     }
+
+//     const detailData = await detailResponse.json();
+
+//     return {
+//       success: true,
+//       recipe: detailData.meals[0],
+//     };
+//   } catch (error) {
+//     console.error("Error fetching recipe of the day:", error);
+//     throw new Error(error.message || "Failed to load recipe");
+//   }
+// }
 
 // Get all categories
 export async function getCategories() {
@@ -36,14 +99,24 @@ export async function getCategories() {
             throw new Error("Failed to fetch categories");
         }
         const data = await response.json();
+        
+        // Filter out non-veg categories
+        const nonVegCategories = ["beef", "chicken", "pork", "seafood", "lamb", "goat"];
+        const filteredCategories = (data.categories || []).filter(
+            (category) => !nonVegCategories.includes(category.strCategory.toLowerCase())
+        );
+
         return {
             success: true,
+            //below 2 lines are used when i was using strapi, when i add filteredCategories line, it will show
+            //  veg-food and also use when i was using non-veg line
             // categories: data.meals || [],
-            categories: data.categories || [],
+            // categories: data.categories || [],
+            categories: filteredCategories,
         };  
     }
     catch(error){
-        console.error("Error fetching recipe of the day:", error);
+        console.error("Error fetching categories:", error);
         throw new Error(error.message || "Failed to load categories");
     }
 }

@@ -79,7 +79,7 @@ export default function HowToCookModal() {
                 type="text"
                 value={recipeName}
                 onChange={(e) => setRecipeName(e.target.value)}
-                placeholder="e.g., Chicken Biryani, Chocolate Cake, Pasta Carbonara"
+                placeholder="e.g., Dal Makhani, Chocolate Cake, Pasta Carbonara"
                 className="w-full px-4 py-3 pr-12 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-stone-900 placeholder:text-stone-400"
                 autoFocus
               />
