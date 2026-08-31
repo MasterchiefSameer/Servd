@@ -288,7 +288,7 @@ export default function AddToPantryModal({ isOpen, onClose, onSuccess }) {
                   onChange={(e) =>
                     setManualItem({ ...manualItem, name: e.target.value })
                   }
-                  placeholder="e.g., Chicken breast"
+                  placeholder="e.g., Dal Makhani"
                   className="w-full px-4 py-3 border border-stone-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500"
                   disabled={adding}
                 />
